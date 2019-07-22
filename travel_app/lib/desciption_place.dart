@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/review_list.dart';
 
 class DescriptionPlace extends StatelessWidget{
 
@@ -101,7 +102,8 @@ class DescriptionPlace extends StatelessWidget{
     return Column(
       children: <Widget>[
         title_stars,
-        description       
+        description,
+        //new ReviewList()  
       ],
     );
   }

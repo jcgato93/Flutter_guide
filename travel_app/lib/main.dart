@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/gradient_back.dart';
+import 'package:travel_app/header_appbar.dart';
+import 'package:travel_app/review_list.dart';
 import 'desciption_place.dart';
 
 void main() => runApp(MyApp());
@@ -24,10 +27,21 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
-        appBar: AppBar(
-          title: Text("Home"),
+        // appBar: AppBar(
+        //   title: Text("Home"),
+        // ),
+        //  body: new DescriptionPlace("Duwili Ella",4, descriptionDummy),
+        body: Stack(
+          children: <Widget>[
+            ListView(
+              children: <Widget>[
+                DescriptionPlace("Duwili Ella",4, descriptionDummy),
+                ReviewList()
+              ],
+            ),
+           HeaderAppBar()
+          ],
         ),
-        body: new DescriptionPlace("Duwili Ella",4, descriptionDummy),
       )
     );
   }
