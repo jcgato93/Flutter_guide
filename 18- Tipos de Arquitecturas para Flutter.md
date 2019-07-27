@@ -77,3 +77,32 @@ Clena architecture sugiere que se expongan las entidades y cada una por si sola 
 <img src="assets/bloc_architecture.JPG" />
 
 
+
+
+## BLoC Singleton en Flutter
+
+Un archivo de vista debe tener su archivo de lógica de negocio, se podrán comunicar, llamarse, sí una vista necesita hacer login, entre otros. Podemos tener varias vistas comunicándose con una sola lógica de negocio.
+
+Usaremos éste ejemplo para ilustrar lo que queremos hacer, recuerda que queremos exponer la lógica de negocio lo más alto posible para que sus hijos puedan acceder a el:
+
+<img src="assets/bloc_singleton.JPG" />
+
+```javascript
+class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return BlocProvider (
+            bloc: AppBloc(),
+            child: MaterialApp(
+                title: 'Yo Sleep',
+                home: MainPage(),
+                initialRoute: ‘main’,
+                routes: {
+                    'main': (context) => MainPage(),
+                }
+            ),
+        );
+    }
+}
+```
+
