@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/gradient_back.dart';
-import 'package:travel_app/header_appbar.dart';
-import 'package:travel_app/review_list.dart';
-import 'desciption_place.dart';
+import 'package:travel_app/travel_trips.dart';
+import 'package:travel_app/travel_trips_cupertino.dart';
+
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  String descriptionDummy = "Lorem Ipsum is simply dummy text, Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy text Lorem Ipsum is simply dummy textLorem Ipsum is simply dummy text ";
+  
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        // appBar: AppBar(
-        //   title: Text("Home"),
-        // ),
-        //  body: new DescriptionPlace("Duwili Ella",4, descriptionDummy),
-        body: Stack(
-          children: <Widget>[
-            ListView(
-              children: <Widget>[
-                DescriptionPlace("Duwili Ella",4, descriptionDummy),
-                ReviewList()
-              ],
-            ),
-           HeaderAppBar()
-          ],
-        ),
-      )
+      home: TravelTripsCupertino()
     );
   }
 }
